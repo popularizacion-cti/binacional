@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Concurso</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f9; padding: 20px; color: #333; }
+        .form-container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; text-align: center; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: #27ae60; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 25px; }
+        button:disabled { background: #95a5a6; cursor: not-allowed; }
+        .status { margin-top: 20px; text-align: center; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Formulario de Inscripción</h2>
+    <form id="inscripcionForm">
+        <label>Nombres</label>
+        <input type="text" id="nombres" required>
+
+        <label>Apellidos</label>
+        <input type="text" id="apellidos" required>
+
+        <label>DNI</label>
+        <input type="text" id="dni" maxlength="8" required>
+
+        <label>Fecha de Nacimiento</label>
+        <input type="date" id="fechaNacimiento" required>
+
+        <label>Región</label>
+        <input type="text" id="region" required>
+
+        <label>Provincia</label>
+        <input type="text" id="provincia" required>
+
+        <label>Nombre de Institución Educativa</label>
+        <input type="text" id="institucion" required>
+
+        <hr style="margin-top:25px">
+        <p><strong>Subir Archivos (Solo PDF)</strong></p>
+
+        <label>Archivo 1</label>
+        <input type="file" class="pdf-input" accept=".pdf" required>
+
+        <label>Archivo 2</label>
+        <input type="file" class="pdf-input" accept=".pdf" required>
+
+        <label>Archivo 3</label>
+        <input type="file" class="pdf-input" accept=".pdf" required>
+
+        <label>Archivo 4</label>
+        <input type="file" class="pdf-input" accept=".pdf" required>
+
+        <button type="submit" id="btnEnviar">Enviar Inscripción</button>
+    </form>
+    <div id="status" class="status"></div>
+</div>
+
+<script>
+    // URL de tu Aplicación Web de Google Apps Script
+    // IMPORTANTE: Si hiciste "Nueva implementación" en Apps Script, asegúrate de actualizar esta URL si cambió.
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz4to_jvrNwuiZIO6c-ROw-Jg-8solcb2CCwKLfsZawlbnj9FjtX2bQum6Gp7C0YCkftg/exec";
+
+    const CHUNK_SIZE = 2 * 1024 * 1024; // 2MB por pedazo
+
+    document.getElementById('inscripcionForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('btnEnviar');
+        const status = document.getElementById('status');
+        btn.disabled = true;
+        status.style.color = "#333";
+        status.innerText = "Iniciando proceso de subida...";
+
+        const files = document.querySelectorAll('.pdf-input');
+        const links = [];
+
+        try {
+            // 1. Subir los 4 archivos secuencialmente
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i].files[0];
+                status.innerText = `Subiendo archivo ${i+1} de 4: ${file.name}...`;
+
+                // Pedir URL de subida
+                const resStart = await fetch(WEB_APP_URL, {
+                    method: 'POST',
+                    body: JSON.stringify({ 
+                        action: "startUpload", 
+                        fileName: file.name,
+                        mimeType: file.type,
+                        origin: window.location.origin 
+                    })
+                });
+                const startData = await resStart.json();
+
+                // Verificamos que Google no haya rechazado la petición
+                if (startData.status !== "success" || !startData.uploadUrl) {
+                    throw new Error("Rechazo de Google: " + (startData.message || "No se obtuvo URL de subida"));
+                }
+
+                const uploadUrl = startData.uploadUrl;
+
+                // Subir por trozos
+                let offset = 0;
+                while (offset < file.size) {
+                    const chunk = file.slice(offset, offset + CHUNK_SIZE);
+                    const resChunk = await fetch(uploadUrl, {
+                        method: 'PUT',
+                        headers: { 'Content-Range': `bytes ${offset}-${offset + chunk.size - 1}/${file.size}` },
+                        body: chunk
+                    });
+
+                    // Atrapamos errores de la subida del bloque
+                    if (!resChunk.ok && resChunk.status !== 308) {
+                        throw new Error(`Fallo de conexión al enviar archivo (${resChunk.status})`);
+                    }
+
+                    if (resChunk.status === 200 || resChunk.status === 201) {
+                        const finalData = await resChunk.json();
+                        links.push(`https://drive.google.com/open?id=${finalData.id}`);
+                    }
+                    offset += CHUNK_SIZE;
+                }
+            }
+
+            // 2. Enviar datos finales al Sheet
+            status.innerText = "Guardando tus datos...";
+            const resSave = await fetch(WEB_APP_URL, {
+                method: 'POST',
+                body: JSON.stringify({
+                    action: "saveData",
+                    nombres: document.getElementById('nombres').value,
+                    apellidos: document.getElementById('apellidos').value,
+                    dni: document.getElementById('dni').value,
+                    fechaNacimiento: document.getElementById('fechaNacimiento').value,
+                    region: document.getElementById('region').value,
+                    provincia: document.getElementById('provincia').value,
+                    institucion: document.getElementById('institucion').value,
+                    links: links
+                })
+            });
+
+            const saveData = await resSave.json();
+            if (saveData.status !== "success") {
+                throw new Error("No se pudo guardar la información en el Excel.");
+            }
+
+            status.style.color = "green";
+            status.innerText = "¡Inscripción completada con éxito!";
+            document.getElementById('inscripcionForm').reset();
+
+        } catch (error) {
+            console.error(error);
+            status.style.color = "red";
+            status.innerText = error.message; 
+            btn.disabled = false;
+        }
+    });
+</script>
+
+</body>
+</html>
