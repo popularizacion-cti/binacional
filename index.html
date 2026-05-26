@@ -29,6 +29,9 @@
         <label>DNI</label>
         <input type="text" id="dni" maxlength="8" required>
 
+        <label>Correo Electrónico</label>
+        <input type="email" id="correo" required>
+
         <label>Fecha de Nacimiento</label>
         <input type="date" id="fechaNacimiento" required>
 
@@ -75,6 +78,7 @@
 
         const files = document.querySelectorAll('.pdf-input');
         const links = [];
+        const nombresArchivosOriginales = [];
         
         const dni = document.getElementById('dni').value.trim();
 
@@ -83,6 +87,7 @@
                 const file = files[i].files[0];
                 status.innerText = `Subiendo archivo ${i+1} de 4: ${file.name}...`;
 
+                nombresArchivosOriginales.push(file.name);
                 const nombreModificado = `${dni} | ${file.name}`;
 
                 const resStart = await fetch(WEB_APP_URL, {
@@ -130,12 +135,14 @@
                     action: "saveData",
                     nombres: document.getElementById('nombres').value,
                     apellidos: document.getElementById('apellidos').value,
-                    dni: document.getElementById('dni').value,
+                    dni: dni,
+                    correo: document.getElementById('correo').value.trim(),
                     fechaNacimiento: document.getElementById('fechaNacimiento').value,
                     region: document.getElementById('region').value,
                     provincia: document.getElementById('provincia').value,
                     institucion: document.getElementById('institucion').value,
-                    links: links
+                    links: links,
+                    nombresArchivos: nombresArchivosOriginales
                 })
             });
 
