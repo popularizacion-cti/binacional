@@ -62,11 +62,8 @@
 </div>
 
 <script>
-    // URL de tu Aplicación Web de Google Apps Script
-    // IMPORTANTE: Si hiciste "Nueva implementación" en Apps Script, asegúrate de actualizar esta URL si cambió.
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz4to_jvrNwuiZIO6c-ROw-Jg-8solcb2CCwKLfsZawlbnj9FjtX2bQum6Gp7C0YCkftg/exec";
-
-    const CHUNK_SIZE = 2 * 1024 * 1024; // 2MB por pedazo
+    const CHUNK_SIZE = 2 * 1024 * 1024; 
 
     document.getElementById('inscripcionForm').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -78,33 +75,33 @@
 
         const files = document.querySelectorAll('.pdf-input');
         const links = [];
+        
+        const dni = document.getElementById('dni').value.trim();
 
         try {
-            // 1. Subir los 4 archivos secuencialmente
             for (let i = 0; i < files.length; i++) {
                 const file = files[i].files[0];
                 status.innerText = `Subiendo archivo ${i+1} de 4: ${file.name}...`;
 
-                // Pedir URL de subida
+                const nombreModificado = `${dni} | ${file.name}`;
+
                 const resStart = await fetch(WEB_APP_URL, {
                     method: 'POST',
                     body: JSON.stringify({ 
                         action: "startUpload", 
-                        fileName: file.name,
+                        fileName: nombreModificado,
                         mimeType: file.type,
                         origin: window.location.origin 
                     })
                 });
                 const startData = await resStart.json();
 
-                // Verificamos que Google no haya rechazado la petición
                 if (startData.status !== "success" || !startData.uploadUrl) {
                     throw new Error("Rechazo de Google: " + (startData.message || "No se obtuvo URL de subida"));
                 }
 
                 const uploadUrl = startData.uploadUrl;
 
-                // Subir por trozos
                 let offset = 0;
                 while (offset < file.size) {
                     const chunk = file.slice(offset, offset + CHUNK_SIZE);
@@ -114,7 +111,6 @@
                         body: chunk
                     });
 
-                    // Atrapamos errores de la subida del bloque
                     if (!resChunk.ok && resChunk.status !== 308) {
                         throw new Error(`Fallo de conexión al enviar archivo (${resChunk.status})`);
                     }
@@ -127,7 +123,6 @@
                 }
             }
 
-            // 2. Enviar datos finales al Sheet
             status.innerText = "Guardando tus datos...";
             const resSave = await fetch(WEB_APP_URL, {
                 method: 'POST',
