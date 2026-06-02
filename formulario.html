@@ -3,166 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripción Concurso</title>
-    <style>
-        body { font-family: sans-serif; background: #f4f4f9; padding: 20px; color: #333; }
-        .form-container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h2 { color: #2c3e50; text-align: center; }
-        label { display: block; margin-top: 15px; font-weight: bold; }
-        input, select { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-        button { width: 100%; padding: 15px; background: #27ae60; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 25px; }
-        button:disabled { background: #95a5a6; cursor: not-allowed; }
-        .status { margin-top: 20px; text-align: center; font-weight: bold; }
-    </style>
+    <title>Inscripción - XXII Feria Escolar Binacional de Ciencia y Tecnología</title>
+    <!-- <link rel="stylesheet" href="css/global.css"> -->
+    <link rel="stylesheet" href="css/formulario.css">
+    
 </head>
 <body>
 
 <div class="form-container">
-    <h2>Formulario de Inscripción</h2>
+    <div class="header-banner">
+        <h2>XXII Feria Escolar Binacional de Ciencia y Tecnología</h2>
+        <p class="subtitle">Perú - Ecuador 2026 | Sede Sullana</p>
+    </div>
+
+    <div class="notice">
+        <strong>Declaración Jurada:</strong> La inscripción supone la aceptación expresa de las normas y criterios de evaluación de las bases del evento. Los proyectos deben ser de autoría propia.
+    </div>
+
     <form id="inscripcionForm">
-        <label>Nombres</label>
-        <input type="text" id="nombres" required>
+        
+        <fieldset>
+            <legend>Datos del Proyecto</legend>
+            
+            <label for="nombreProyecto">Título del proyecto</label>
+            <input type="text" id="nombreProyecto" required placeholder="Ej. Filtro de agua Eco-Sostenible">
 
-        <label>Apellidos</label>
-        <input type="text" id="apellidos" required>
+            <label for="areaParticipacion">Área de participación</label>
+            <select id="areaParticipacion" required>
+                <option value="" disabled selected>Seleccione un área...</option>
+                <option value="Científica">Científica</option>
+                <option value="Ciencias Ambientales">Ciencias Ambientales</option>
+                <option value="Tecnología e Ingeniería">Tecnología e Ingeniería</option>
+                <option value="Social y Vida Práctica">Social y Vida Práctica</option>
+            </select>
 
-        <label>DNI</label>
-        <input type="text" id="dni" maxlength="8" required>
+            <label for="region">Región (Perú)</label>
+            <select id="region" required>
+                <option value="" disabled selected>Seleccione su región norte...</option>
+                <option value="Amazonas">Amazonas</option>
+                <option value="Cajamarca">Cajamarca</option>
+                <option value="Lambayeque">Lambayeque</option>
+                <option value="Loreto">Loreto</option>
+                <option value="Piura">Piura</option>
+                <option value="Tumbes">Tumbes</option>
+            </select>
 
-        <label>Correo Electrónico</label>
-        <input type="email" id="correo" required>
+            <label for="provincia">Provincia</label>
+            <input type="text" id="provincia" required placeholder="Ej. Sullana">
 
-        <label>Fecha de Nacimiento</label>
-        <input type="date" id="fechaNacimiento" required>
+            <label for="institucion">Institución Educativa</label>
+            <input type="text" id="institucion" required placeholder="Nombre de la I.E.">
+        </fieldset>
 
-        <label>Región</label>
-        <input type="text" id="region" required>
+        <fieldset>
+            <legend>Datos de los estudiantes representantes (máx. 2)</legend>
+            
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 10px 0;"><strong>Estudiante 1:</strong></p>
+            <input type="text" id="nombresE1" required placeholder="Nombres y apellidos completos">
+            <input type="text" id="dniE1" maxlength="8" required placeholder="DNI (8 dígitos)" style="margin-top:8px;">
+            <select id="gradoE1" required style="margin-top:8px;">
+                <option value="" disabled selected>Seleccione el grado de estudios...</option>
+                <option value="1° Secundaria">1° Secundaria</option>
+                <option value="2° Secundaria">2° Secundaria</option>
+                <option value="3° Secundaria">3° Secundaria</option>
+                <option value="4° Secundaria">4° Secundaria</option>
+                <option value="5° Secundaria">5° Secundaria</option>
+            </select>
+            <input type="email" id="correoE1" required placeholder="Correo electrónico" style="margin-top:8px;">
+            <label style="font-size:12px; margin-top:5px;">Fecha de nacimiento:</label>
+            <input type="date" id="fechaNacimientoE1" required style="margin-top:3px;">
 
-        <label>Provincia</label>
-        <input type="text" id="provincia" required>
+            <hr style="border: 0; border-top: 1px solid var(--gray); margin: 20px 0;">
 
-        <label>Nombre de Institución Educativa</label>
-        <input type="text" id="institucion" required>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 10px 0;"><strong>Estudiante 2:</strong></p>
+            <input type="text" id="nombresE2" required placeholder="Nombres y apellidos completos">
+            <input type="text" id="dniE2" maxlength="8" required placeholder="DNI (8 dígitos)" style="margin-top:8px;">
+            <select id="gradoE2" required style="margin-top:8px;">
+                <option value="" disabled selected>Seleccione el grado de estudios...</option>
+                <option value="1° Secundaria">1° Secundaria</option>
+                <option value="2° Secundaria">2° Secundaria</option>
+                <option value="3° Secundaria">3° Secundaria</option>
+                <option value="4° Secundaria">4° Secundaria</option>
+                <option value="5° Secundaria">5° Secundaria</option>
+            </select>
+            <input type="email" id="correoE2" required placeholder="Correo electrónico" style="margin-top:8px;">
+            <label style="font-size:12px; margin-top:5px;">Fecha de nacimiento:</label>
+            <input type="date" id="fechaNacimientoE2" required style="margin-top:3px;">
+        </fieldset>
 
-        <hr style="margin-top:25px">
-        <p><strong>Subir Archivos (Solo PDF)</strong></p>
+        <fieldset>
+            <legend>Datos del docente tutor</legend>
+            <label for="nombreAsesor">Nombres y apellidos del docente</label>
+            <input type="text" id="nombreAsesor" required placeholder="Nombre completo del tutor">
+            <label for="nombreAsesor">DNI del docente</label>
+            <input type="text" id="dniAsesor" required placeholder="Número de documento de identidad del tutor">
+            <label for="nombreAsesor">Especialidad del docente</label>
+            <input type="text" id="especialidadAsesor" required placeholder="Especialidad de estudios del asesor">
+            <label for="nombreAsesor">Cargo del docente en la I.E.</label>
+            <input type="text" id="cargoAsesor" required placeholder="Docente de primaria, secundaria, CyT, Jefe de laboratorio, Subdirector, etc.">
+            <label for="correoAsesor">Correo electrónico del docente</label>
+            <input type="email" id="correoAsesor" required placeholder="correo@institucion.edu.pe">
+        </fieldset>
 
-        <label>Archivo 1</label>
-        <input type="file" class="pdf-input" accept=".pdf" required>
+        <fieldset>
+            <legend>Documentación requerida (solo formato PDF)</legend>
+            
+            <div class="file-group">
+                <label>1. Informe del proyecto</label>
+                <label style="font-size:12px; font-weight:400; margin-top:5px;">Documento técnico que incluye como mínimo: 
+                    resumen, introducción, justificación, objetivos, marco teórico o referencial, metodología, resultados, 
+                    análisis o discusión, conclusiones, recomendaciones y bibliografía.</label>
+                <input type="file" class="pdf-input" data-doc="Informe_Proyecto" accept=".pdf" required>
+            </div>
 
-        <label>Archivo 2</label>
-        <input type="file" class="pdf-input" accept=".pdf" required>
+            <div class="file-group">
+                <label>2. Portafolio del proyecto o diario de campo</label>
+                <label style="font-size:12px; font-weight:400; margin-top:5px;">Documento que contenga la memoria cronológica
+                    del proceso de construcción del proyecto, registros, evidencias, instrumentos aplicados, 
+                    avances parciales, ajustes realizados y mecanismos de evaluación de cada fase, 
+                    así como la autoevaluación de los estudiantes autores.</label>
+                <input type="file" class="pdf-input" data-doc="Portafolio_Diario" accept=".pdf" required>
+            </div>
 
-        <label>Archivo 3</label>
-        <input type="file" class="pdf-input" accept=".pdf" required>
+            <div class="file-group">
+                <label>3. Autorización de difusión de imagen y voz</label>
+                <label style="font-size:12px; font-weight:400; margin-top:5px;">Documento suscrito por los representantes
+                    legales de los estudiantes, mediante el cual se autoriza el uso de imagen, voz y material
+                    audiovisual para fines académicos, institucionales y de difusión del evento, en los
+                    medios y plataformas oficiales que determine el Comité Organizador.</label>
+                <a style="font-size:12px"> Estudiante 1: </a><input type="file" class="pdf-input" data-doc="Autorizacion_Imagen_Estudiante1" accept=".pdf" required><br>
+                <a style="font-size:12px"> Estudiante 2: </a><input type="file" class="pdf-input" data-doc="Autorizacion_Imagen_Estudiante2" accept=".pdf" required>
+            </div>
 
-        <label>Archivo 4</label>
-        <input type="file" class="pdf-input" accept=".pdf" required>
+            <div class="file-group">
+                <label>4. Declaración de ética firmada</label>
+                <label style="font-size:12px; font-weight:400; margin-top:5px;">Documento firmado por los dos 
+                    estudiantes autores y el docente tutor, mediante el cual se declara que el proyecto es original,
+                    respeta los principios de integridad científica, no incurre en plagio ni en vulneración 
+                    de derechos de autor, y cumple con las normas éticas aplicables a la investigación escolar.</label>
+                <input type="file" class="pdf-input" data-doc="Declaracion_Etica" accept=".pdf" required>
+            </div>
+        </fieldset>
 
-        <button type="submit" id="btnEnviar">Enviar Inscripción</button>
+        <button type="submit" id="btnEnviar">Enviar Inscripción Oficial</button>
     </form>
     <div id="status" class="status"></div>
 </div>
 
-<script>
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz4to_jvrNwuiZIO6c-ROw-Jg-8solcb2CCwKLfsZawlbnj9FjtX2bQum6Gp7C0YCkftg/exec";
-    const CHUNK_SIZE = 2 * 1024 * 1024; 
-
-    document.getElementById('inscripcionForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btn = document.getElementById('btnEnviar');
-        const status = document.getElementById('status');
-        btn.disabled = true;
-        status.style.color = "#333";
-        status.innerText = "Iniciando proceso de subida...";
-
-        const files = document.querySelectorAll('.pdf-input');
-        const links = [];
-        const nombresArchivosOriginales = [];
-        
-        const dni = document.getElementById('dni').value.trim();
-
-        try {
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i].files[0];
-                status.innerText = `Subiendo archivo ${i+1} de 4: ${file.name}...`;
-
-                nombresArchivosOriginales.push(file.name);
-                const nombreModificado = `${dni} | ${file.name}`;
-
-                const resStart = await fetch(WEB_APP_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ 
-                        action: "startUpload", 
-                        fileName: nombreModificado,
-                        mimeType: file.type,
-                        origin: window.location.origin 
-                    })
-                });
-                const startData = await resStart.json();
-
-                if (startData.status !== "success" || !startData.uploadUrl) {
-                    throw new Error("Rechazo de Google: " + (startData.message || "No se obtuvo URL de subida"));
-                }
-
-                const uploadUrl = startData.uploadUrl;
-
-                let offset = 0;
-                while (offset < file.size) {
-                    const chunk = file.slice(offset, offset + CHUNK_SIZE);
-                    const resChunk = await fetch(uploadUrl, {
-                        method: 'PUT',
-                        headers: { 'Content-Range': `bytes ${offset}-${offset + chunk.size - 1}/${file.size}` },
-                        body: chunk
-                    });
-
-                    if (!resChunk.ok && resChunk.status !== 308) {
-                        throw new Error(`Fallo de conexión al enviar archivo (${resChunk.status})`);
-                    }
-
-                    if (resChunk.status === 200 || resChunk.status === 201) {
-                        const finalData = await resChunk.json();
-                        links.push(`https://drive.google.com/open?id=${finalData.id}`);
-                    }
-                    offset += CHUNK_SIZE;
-                }
-            }
-
-            status.innerText = "Guardando tus datos...";
-            const resSave = await fetch(WEB_APP_URL, {
-                method: 'POST',
-                body: JSON.stringify({
-                    action: "saveData",
-                    nombres: document.getElementById('nombres').value,
-                    apellidos: document.getElementById('apellidos').value,
-                    dni: dni,
-                    correo: document.getElementById('correo').value.trim(),
-                    fechaNacimiento: document.getElementById('fechaNacimiento').value,
-                    region: document.getElementById('region').value,
-                    provincia: document.getElementById('provincia').value,
-                    institucion: document.getElementById('institucion').value,
-                    links: links,
-                    nombresArchivos: nombresArchivosOriginales
-                })
-            });
-
-            const saveData = await resSave.json();
-            if (saveData.status !== "success") {
-                throw new Error("No se pudo guardar la información en el Excel.");
-            }
-
-            status.style.color = "green";
-            status.innerText = "¡Inscripción completada con éxito!";
-            document.getElementById('inscripcionForm').reset();
-
-        } catch (error) {
-            console.error(error);
-            status.style.color = "red";
-            status.innerText = error.message; 
-            btn.disabled = false;
-        }
-    });
-</script>
+<script src="js/global.js"></script>
+<script src="js/formulario.js"></script>
 
 </body>
 </html>
