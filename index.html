@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width-90%, initial-scale=1.0">
+    <title>FEBICYT | CONCYTEC</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/inicio.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <div class="bg-brand text-white py-3 px-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center gap-4">
+            <div class="flex items-center gap-2 font-bold uppercase tracking-wider">
+                <span class="animate-pulse">🔔</span> 
+                La inscripción inicia en:
+            </div>
+            
+            <div id="countdown" class="flex gap-4 font-mono text-xl font-black">
+                <div class="flex flex-col items-center leading-none">
+                    <span id="days">00</span><span class="text-[10px] uppercase font-sans">Días</span>
+                </div>
+                <span>:</span>
+                <div class="flex flex-col items-center leading-none">
+                    <span id="hours">00</span><span class="text-[10px] uppercase font-sans">Hrs</span>
+                </div>
+                <span>:</span>
+                <div class="flex flex-col items-center leading-none">
+                    <span id="minutes">00</span><span class="text-[10px] uppercase font-sans">Min</span>
+                </div>
+                <span>:</span>
+                <div class="flex flex-col items-center leading-none">
+                    <span id="seconds">00</span><span class="text-[10px] uppercase font-sans">Seg</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <header id="inicio" class="relative h-[80vh] flex items-center justify-center text-center text-white bg-slate-900">
+
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            class="absolute inset-0 w-full h-full object-cover opacity-40">
+            <source src="assets/video/eureka.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/50"></div>
+
+        <div class="relative z-10 px-4 animate__animated animate__fadeInUp">
+            
+            <div class="flex justify-center items-center gap-8 mb-0 pt-60">
+                <img src="https://flagcdn.com/pe.svg" alt="Perú" class="w-30 h-20 rounded-sm object-cover shadow-sm border animate__animated animate__fadeInLeft">
+                <img src="https://flagcdn.com/ec.svg" alt="Ecuador" class="w-30 h-20 rounded-sm object-cover shadow-sm border animate__animated animate__fadeInRight">
+            </div>
+            <h1 class="text-4xl md:text-7xl font-bold mb-4 pt-4 md:pt-4 animate__animated animate__fadeInUp">FEBICYT <span class="text-brand">2026</span></h1>
+            <p class="justify-centertext-xl md:text-3xl mb-4 max-w-2xl mx-auto upp">XXII Feria Escolar Binacional de Ciencia y Tecnología <b>Perú - Ecuador</b></p>
+            <p class="text-xl md:text-2xl mb-6 max-w-2xl mx-auto">Sullana, del 5 al 7 de octubre</p>   
+            <!-- <div class="text-2xl flex flex-wrap justify-center gap-4 mb-8">
+                <a href="https://sites.google.com/concytec.gob.pe/pop/febicyt/inscripcion" target="_blank" class="bg-brand hover:opacity-70 text-white font-bold px-8 py-3 rounded-full  transition">&nbsp; INSCRIPCIÓN AQUÍ &nbsp;</a>
+            </div> -->
+            <!-- <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <a href="https://drive.google.com/file/d/1RDjL9uPAadu4fhHOy9duLR5W5e81yEUE/view?usp=sharing" target="_blank" class="bg-brand border-2 border-white text-lg px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-slate-700 transition">Bases 2026</a>
+                <a href="#cronograma" class="border-2 border-white bg-accent text-lg px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-slate-700 transition">Cronograma</a>
+                <a href="#videos" class="border-2 border-white bg-dark text-lg px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-slate-700 transition">Galería de videos</a>
+            </div> -->
+
+            <!-- <div class="text-2xl flex flex-wrap justify-center gap-4 mb-8">
+                <a href="#finalistasjr" class="bg-brand hover:opacity-70 text-white font-bold px-8 py-3 rounded-full  transition">&nbsp; Finalistas JUNIOR &nbsp;</a>
+                <a href="#finalistassr" class="bg-brand hover:opacity-70 text-white font-bold px-8 py-3 rounded-full  transition">&nbsp; Finalistas SENIOR &nbsp;</a>
+            </div> -->
+
+        </div>
+        
+    </header>
+
+    <section id="bases" class="py-10 container mx-auto max-w-6xl px-8">
+        <h2 class="text-3xl font-bold text-center mb-8 text-dark">¿Cómo participar?</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-xl hover:scale-105 transition transform border-t-4 border-accent">
+                <div class="text-red-600 mb-4 text-3xl">📄</div>
+                <h3 class="text-xl font-bold mb-2 text-slate-700">Bases de la feria</h3>
+                <p class="text-slate-600 mb-4">Descarga los lineamientos técnicos y requisitos para participar en esta edición 2026.</p>
+                <a href="https://drive.google.com/file/d/1RDjL9uPAadu4fhHOy9duLR5W5e81yEUE/view?usp=sharing" target=_blank class="text-brand font-bold hover:underline">Descargar PDF →</a>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl hover:scale-105 transition transform border-t-4 border-accent">
+                <div class="text-red-600 mb-4 text-3xl">👩‍🏫</div>
+                <h3 class="text-xl text-slate-700 font-bold mb-2">Asistencia Técnica</h3>
+                <p class="text-slate-600 mb-4">Mira la asistencia técnica para participar de esta edición 2026.</p>
+                <a href="##" target=_blank class="text-brand font-bold hover:underline">Enlace al video →</a>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl hover:scale-105 transition transform border-t-4 border-accent">
+                <div class="text-red-600 mb-4 text-3xl">👩‍💻</div>
+                <h3 class="text-xl font-bold mb-2 text-slate-700">Inscripción</h3>
+                <p class="text-slate-600 mb-4">Para participar de la feria inscribete en el siguiente formulario.</p>
+                <a href="https://sites.google.com/concytec.gob.pe/pop/febicyt/inscripcion" target=_blank class="text-brand font-bold hover:underline">Formulario de inscripción →</a><br>
+            </div>
+        </div>
+    </section>
+
+    <section id="areas" class="py-10 container mx-auto max-w-6xl px-8">
+        <h2 class="text-3xl font-bold text-center mb-8 text-dark">Áreas de participación</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+            
+            <div class="relative overflow-hidden rounded-2xl shadow-xl hover:scale-105 transition transform border-t-4 border-accent flex flex-col min-h-[300px]">
+                <img src="assets/areas/cientifica.jpg" alt="Albert Einstein" class="absolute inset-0 w-full h-full object-cover z-0" />
+                <div class="relative z-20 p-8 flex flex-col h-full justify-end bg-gradient-to-t from-black/90 via-black/10 to-transparent pt-20">
+                    <h3 class="text-xl font-bold mb-2 text-white">Científica</h3>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl shadow-xl hover:scale-105 transition transform border-t-4 border-accent flex flex-col min-h-[300px]">
+                <img src="assets/areas/ambiental.jpg" alt="Marie Curie" class="absolute inset-0 w-full h-full object-cover z-0" />
+                <div class="relative z-20 p-8 flex flex-col h-full justify-end bg-gradient-to-t from-black/90 via-black/10 to-transparent pt-20">
+                    <h3 class="text-xl font-bold mb-2 text-white">Ciencias ambientales</h3>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl shadow-xl hover:scale-105 transition transform border-t-4 border-accent flex flex-col min-h-[300px]">
+                <img src="assets/areas/social.jpg" alt="Carl Sagan" class="absolute inset-0 w-full h-full object-cover z-0" />
+                <div class="relative z-20 p-8 flex flex-col h-full justify-end bg-gradient-to-t from-black/90 via-black/10 to-transparent pt-20">
+                    <h3 class="text-xl font-bold mb-2 text-white">Social y Vida Práctica</h3>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-2xl shadow-xl hover:scale-105 transition transform border-t-4 border-accent flex flex-col min-h-[300px]">
+                <img src="assets/areas/tecnologia.jpg" alt="Neil deGrasse Tyson" class="absolute inset-0 w-full h-full object-cover z-0" />
+                <div class="relative z-20 p-8 flex flex-col h-full justify-end bg-gradient-to-t from-black/90 via-black/10 to-transparent pt-20">
+                    <h3 class="text-xl font-bold mb-2 text-white">Tecnología e Ingeniería</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="cronograma" class="py-10 container mx-auto max-w-5xl px-8">
+        <h2 class="text-3xl font-bold text-center mb-8 text-dark upp">Cronograma 2026</h2>
+        <div class="grid grid-cols-1 gap-8 max-w-6xl">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-accent hover:scale-105 transition transform">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-slate-200">
+                            <th rowspan="2" class="py-4 px-6 text-slate-100 font-bold uppercase text-sm tracking-wider">Etapa</th>
+                            <th class="py-4 px-6 text-slate-100 font-bold uppercase text-sm tracking-wider">Hito</th>
+                            <th class="py-4 px-6 text-slate-100 font-bold uppercase text-sm tracking-wider">Fechas</th>
+                        </tr>
+                    </thead>
+                    <tbody class="hover:bg-slate-50/70 transition-colors">
+                        <tr>
+                            <td rowspan="4" class="py-4 px-6 font-bold text-dark text-center uppercase">Primera etapa modalidad virtual</td>
+                            <td class="py-4 px-6 text-slate-600 font-medium">Convocatoria</td>
+                            <td class="py-4 px-6 text-slate-600 font-medium">De marzo a agosto</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-slate-600 font-medium">Fecha de inscripción</td>
+                            <td class="py-4 px-6 text-slate-600 font-medium">10 - 14 de agosto</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-slate-600 font-medium">Evaluación de proyectos</td>
+                            <td class="py-4 px-6 text-slate-600 font-medium">17 de agosto - 9 de setiembre</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-slate-600 font-medium">Publicación de resultados</td>
+                            <td class="py-4 px-6 text-slate-600 font-medium">11 de septiembre</td>
+                        </tr>
+                    </tbody>
+                    <tbody class="hover:bg-slate-50/70 transition-colors">
+                        <tr>
+                            <td rowspan="3" class="py-4 px-6 font-bold text-dark text-center uppercase">Segunda etapa modalidad presencial</td>
+                            <td class="py-4 px-6 text-slate-600 font-medium">Convocatoria a proyectos finalistas</td>
+                            <td class="py-4 px-6 text-slate-600 font-medium">11 de septiembre</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-slate-600 font-medium">Desarrollo de la XXII Feria Escolar Binacional de Ciencia y Tecnología Perú - Ecuador en Sullana, Piura</td>
+                            <td class="py-4 px-6 text-slate-600 font-medium">Del 5 al 7 de octubre</td>
+                        </tr>
+                    </tbody>
+                    <tbody class="hover:bg-slate-50/70 transition-colors">
+                        <tr>
+                            <td colspan="2" class="bg-dark px-6 font-bold text-slate-100 text-center uppercase">Publicación de resultados finales</td>
+                            <td class="bg-accent px-6 text-slate-100 font-bold">7 de octubre</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <section id="videos" class="py-10 container mx-auto px-8">
+        <h2 class="text-3xl font-bold text-center mb-8 text-dark">Galería de Videos</h2>
+        
+        <div id="contenedor-videos" class="grid md:grid-cols-2 max-w-6xl gap-12 mx-auto">
+            <p class="text-center col-span-full">Cargando videos...</p>
+        </div>
+    </section>
+    
+    <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-dark mb-4">Instituciones Organizadoras</h2>
+        <div class="h-1 w-20 bg-accent mx-auto mb-10"></div>
+        
+        <div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all">
+            <img href="##" src="assets/logos/logo-ecuador.png" alt="Ministerio de Educación Ecuador" class="h-10" >
+            <img href="https://www.gob.pe/concytec" src="assets/logos/logo-concytec.png" alt="Concytec" class="h-20" >
+            <img href="https://www.gob.pe/minedu" src="assets/logos/minedu.png" alt="MINEDU" class="h-10" >
+        </div>
+        
+        <div class="mt-12 p-8 bg-white rounded-2xl border-dashed border-2 border-accent/30 max-w-3xl mx-auto">
+            <p class="text-dark italic text-lg">
+                "Buscamos fortalecer las capacidades investigativas de los estudiantes y promover el intercambio de experiencias en la enseñanza-aprendizaje de la investigación científica y tecnológica, incentivando el emprendimiento"
+            </p>
+        </div>
+    </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-10 pb-8">
+        <!-- <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 border-b border-white/10 pb-12"> -->
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 pb-4">
+            <div>
+                <h3 class="text-brand font-bold text-xl mb-4">FEBICYT</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    La Feria Escolar Binacional de Ciencia y Tecnología es un espacio de encuentro para estudiantes y profesores de Ecuador y Perú.
+                </p>
+            </div>
+            <div>
+
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase text-accent tracking-widest text-sm">Contacto</h4>
+                <p class="text-slate-400 text-sm">📍 Av. del Aire 485, San Borja, Lima</p>
+                <p class="text-slate-400 text-sm">☎️ 0051-1-399-0030 anexo 1220</p>
+                <p class="text-slate-400 text-sm">📧 ferias@concytec.gob.pe</p>
+                <div class="flex gap-4 mt-4">
+                    <a href="https://www.facebook.com/concytec/" target="_blank" rel="noopener noreferrer" class="text-xl hover:text-brand cursor-pointer">FB</a>
+                    <a href="https://www.instagram.com/concytecperu/" target="_blank" rel="noopener noreferrer" class="text-xl hover:text-brand cursor-pointer">IG</a>
+                    <a href="https://www.youtube.com/ConcytecPeru" target="_blank" rel="noopener noreferrer" class="text-xl hover:text-brand cursor-pointer">YT</a>
+                    <a href="https://www.tiktok.com/@concytecperu" target="_blank" rel="noopener noreferrer" class="text-xl hover:text-brand cursor-pointer">TT</a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="text-center mt-8 text-xs text-slate-500 uppercase tracking-widest">
+            © 2026 CONCYTEC | Unidad de popularización de la ciencia, tecnología e innovación
+        </div> -->
+    </footer>
+
+<script src="js/global.js"></script>
+<script src="js/inicio.js"></script>
+
+</body>
+
+</html>

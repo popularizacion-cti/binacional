@@ -1,0 +1,47 @@
+/* Reseteo básico y tipografía general */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    /* Quitamos los bordes verticales internos y dejamos solo una línea sutil abajo */
+    border-bottom: 1px solid #e2e8f0; 
+    padding: 14px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #005A7C; /* Encabezado oscuro para mejor contraste */
+    color: white;
+    font-weight: bold;
+}
+
+/* Colores alternados por bloques (manualmente mediante clases) */
+.bloque-gris {
+    background-color: #f8fafc; /* Gris muy claro */
+}
+
+.bloque-blanco {
+    background-color: #ffffff;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.check-verde {
+            /* Al ser plano, ahora puedes ponerle el color exacto que quieras */
+            color: #B4BD0E; /* Azul Tailwind */
+            font-size: 24px;
+            font-weight: bold;
+}
