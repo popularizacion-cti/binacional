@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width-90%, initial-scale=1.0">
+    <title>FEBICYT | CONCYTEC</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/inicio.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <div class="bg-brand text-white py-3 px-4 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center gap-4">
+            <div class="flex items-center gap-2 font-bold uppercase tracking-wider">
+                <span class="animate-pulse">🔔</span> 
+                La inscripción inicia en:
+            </div>
+            
+            <div id="countdown" class="flex gap-4 font-mono text-xl font-black">
+                <div class="flex flex-col items-center leading-none">
+                    <span id="days">00</span><span class="text-[10px] uppercase font-sans">Días</span>
+                </div>
+                <span>:</span>
+                <div class="flex flex-col items-center leading-none">
+                    <span id="hours">00</span><span class="text-[10px] uppercase font-sans">Hrs</span>
+                </div>
+                <span>:</span>
+                <div class="flex flex-col items-center leading-none">
+                    <span id="minutes">00</span><span class="text-[10px] uppercase font-sans">Min</span>
+                </div>
+                <span>:</span>
+                <div class="flex flex-col items-center leading-none">
+                    <span id="seconds">00</span><span class="text-[10px] uppercase font-sans">Seg</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <header id="inicio" class="relative h-[80vh] flex items-center justify-center text-center text-white bg-slate-900">
+
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            class="absolute inset-0 w-full h-full object-cover opacity-40">
+            <source src="assets/video/binacional.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/50"></div>
+
+        <div class="relative z-10 px-4 animate__animated animate__fadeInUp">
+            
+            <div class="flex justify-center items-center gap-8 mb-0 pt-60">
+                <img src="https://flagcdn.com/pe.svg" alt="Perú" class="w-30 h-20 rounded-sm object-cover shadow-sm border animate__animated animate__fadeInLeft">
+                <img src="https://flagcdn.com/ec.svg" alt="Ecuador" class="w-30 h-20 rounded-sm object-cover shadow-sm border animate__animated animate__fadeInRight">
+            </div>
+            <h1 class="text-4xl md:text-7xl font-bold mb-4 pt-4 md:pt-4 animate__animated animate__fadeInUp">FEBICYT <span class="text-brand">2026</span></h1>
+            <p class="justify-centertext-xl md:text-3xl mb-4 max-w-2xl mx-auto upp">XXII Feria Escolar Binacional de Ciencia y Tecnología <br><b>Perú - Ecuador</b></p>
+            <p class="text-xl md:text-2xl mb-6 max-w-2xl mx-auto">Sullana, del 5 al 7 de octubre</p>   
+            <!-- <div class="text-2xl flex flex-wrap justify-center gap-4 mb-8">
+                <a href="https://sites.google.com/concytec.gob.pe/pop/febicyt/inscripcion" target="_blank" class="bg-brand hover:opacity-70 text-white font-bold px-8 py-3 rounded-full  transition">&nbsp; INSCRIPCIÓN AQUÍ &nbsp;</a>
+            </div> -->
+            <!-- <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <a href="https://drive.google.com/file/d/1RDjL9uPAadu4fhHOy9duLR5W5e81yEUE/view?usp=sharing" target="_blank" class="bg-brand border-2 border-white text-lg px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-slate-700 transition">Bases 2026</a>
+                <a href="#cronograma" class="border-2 border-white bg-accent text-lg px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-slate-700 transition">Cronograma</a>
+                <a href="#videos" class="border-2 border-white bg-dark text-lg px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-slate-700 transition">Galería de videos</a>
+            </div> -->
+
+            <!-- <div class="text-2xl flex flex-wrap justify-center gap-4 mb-8">
+                <a href="#finalistasjr" class="bg-brand hover:opacity-70 text-white font-bold px-8 py-3 rounded-full  transition">&nbsp; Finalistas JUNIOR &nbsp;</a>
+                <a href="#finalistassr" class="bg-brand hover:opacity-70 text-white font-bold px-8 py-3 rounded-full  transition">&nbsp; Finalistas SENIOR &nbsp;</a>
+            </div> -->
+
+        </div>
+        
+    </header>
+
+    <div class="sub-nav flex flex-wrap justify-center">
+        <a href="#feria">Sobre la feria</a>
+        <a href="#alcance">Alcance Binacional</a>
+        <a href="#bases">¿Cómo participar?</a>
+        <a href="#areas">Áreas de participación</a>
+        <a href="#cronograma">Cronograma</a>
+        <a href="#fotos">Galería fotográfica</a>
+        <a href="#videos">Galería de videos</a>
+    </div>
+
+    <!-- ----------------------------
+    FEBICYT
+    ---------------------------- -->
+
+    <section id="feria" class="py-16 bg-slate-100">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-8">
+            <div class="flex flex-col items-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark tracking-tight text-center">Sobre la feria</h2>
+                <div class="w-20 h-1 bg-brand mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-accent md:col-span-2 lg:col-span-3">
+                    <h3 class="text-2xl font-bold mb-4 text-dark">
+                        Feria Escolar Binacional de Ciencia y Tecnología Perú Ecuador
+                    </h3>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        El Consejo Nacional de Ciencia, Tecnología e Innovación del Perú y el Ministerio de Educación, Deporte y Cultura del Ecuador promueven la Feria Escolar Binacional de Ciencia y Tecnología (FEBICYT) como un espacio de encuentro para estudiantes y docentes de las regiones norte de Perú y sur de Ecuador.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-brand lg:col-span-2 flex flex-col justify-center">
+                    <h3 class="text-xl font-bold mb-3 text-dark flex items-center gap-2">
+                        Objetivo
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Este espacio se realiza anualmente con el objetivo de fortalecer las capacidades investigativas de los estudiantes y promover el intercambio de experiencias en la enseñanza–aprendizaje de la investigación científica y tecnológica, incentivando el emprendimiento. Asimismo, impulsa la formulación de proyectos orientados a resolver problemáticas reales, con enfoque interdisciplinario y énfasis en el pensamiento crítico, la creatividad, la cultura digital y el desarrollo sostenible, fortaleciendo competencias científicas y tecnológicas acordes con los desafíos del siglo XXI.
+                    </p>
+                </div>
+
+                <div class="bg-dark text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden flex flex-col justify-center transform hover:-translate-y-1">
+                    <div class="absolute -right-12 -top-12 w-32 h-32 bg-accent opacity-20 rounded-full blur-2xl"></div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-extrabold mb-3 text-brand">FEBICYT 2026</h3>
+                        <p class="text-slate-200 leading-relaxed">
+                            Para la presente <strong>edición XXII</strong>, el CONCYTEC de Perú, a través de la Dirección de Políticas y Programas de CTI, será el anfitrión.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-white/20">
+                            <p class="text-sm font-medium text-accent">📍 Sullana, Región Piura</p>
+                            <p class="text-sm font-medium text-accent mt-1">🗓️ 5 al 7 de octubre del 2026</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ----------------------------
+    ALCANCE
+    ---------------------------- -->
+       
+    <section id="alcance" class="py-16 bg-white">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-8">
+            <div class="flex flex-col items-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark tracking-tight text-center">Alcance Binacional</h2>
+                <div class="w-20 h-1 bg-brand mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-4 flex flex-col gap-8 justify-center">
+                    <div class="bg-slate-100 p-6 rounded-2xl shadow-md border-l-4 border-brand">
+                        <h3 class="text-2xl font-bold mb-2 text-dark">Perú</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Participan estudiantes del nivel secundario de Educación Básica Regular de las regiones del norte: <strong>Amazonas, Cajamarca, Piura, Tumbes, Lambayeque y Loreto</strong>.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-slate-100 p-6 rounded-2xl shadow-md border-l-4 border-accent">
+                        <h3 class="text-2xl font-bold mb-2 text-dark">Ecuador</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Participan estudiantes de 1°, 2° y 3° de bachillerato del cordón fronterizo: <strong>Sucumbíos, Orellana, Pastaza, Morona Santiago, El Oro, Loja y Zamora</strong>.
+                        </p>
+                    </div>
+                    
+                </div>
+
+                <div class="lg:col-span-8 bg-slate-50 border border-slate-200 rounded-3xl p-6 relative shadow-inner min-h-[400px] max-h-[400px] flex items-center justify-center overflow-hidden" id="contenedor-mapa-binacional">
+                    
+                    <div class="absolute top-8 left-8 z-10 pointer-events-none">
+                        <span class="text-4xl font-extrabold text-accent opacity-20 tracking-widest uppercase">Ecuador</span>
+                    </div>
+                    <div class="absolute bottom-8 right-8 z-10 pointer-events-none">
+                        <span class="text-4xl font-extrabold text-brand opacity-20 tracking-widest uppercase">Perú</span>
+                    </div>
+
+                    <div id="etiqueta-region" class="absolute pointer-events-none opacity-0 transition-opacity duration-200 z-20 text-lg md:text-xl font-bold drop-shadow-md whitespace-nowrap">
+                        </div>
+
+                    <div id="mapa-svg-wrapper" class="w-full h-full relative z-0 flex items-center justify-center">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ----------------------------
+    COMO PARTICIPAR
+    ---------------------------- -->
+    
+    <section id="bases" class="py-16 bg-slate-100">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-8">
+            <div class="flex flex-col items-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark tracking-tight text-center">¿Cómo participar?</h2>
+                <div class="w-20 h-1 bg-brand mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-brand flex flex-col h-full">
+                    <div class="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center text-2xl mb-6 shadow-sm">
+                        📄
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-dark">Bases de la feria</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
+                        Descarga los lineamientos técnicos y requisitos oficiales para participar en esta edición 2026.
+                    </p>
+                    <a href="https://drive.google.com/file/d/1RDjL9uPAadu4fhHOy9duLR5W5e81yEUE/view?usp=sharing" target="_blank" class="inline-flex items-center gap-2 text-brand font-bold hover:text-dark transition-colors duration-200 group mt-auto">
+                        Descargar PDF 
+                        <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                    </a>
+                </div>
+
+                <!-- =========
+                 ASISTENCIAS
+                 ============= -->
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-accent flex flex-col h-full">
+    
+                    <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center text-2xl mb-6 shadow-sm">
+                        👩‍💻
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold text-dark">Asistencias técnicas</h3>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand px-2 py-1 rounded-md">Virtuales</span>
+                    </div>
+                    
+                    <p class="text-slate-600 mb-5 leading-relaxed text-sm">
+                        <strong>Tema:</strong> Reunión informativa Feria Binacional Perú - Ecuador 2026. Conéctate a nuestras sesiones en línea:
+                    </p>
+
+                    <ul class="space-y-4 flex-grow mt-auto">
+                        
+                        <li class="relative flex flex-col gap-3 p-4 rounded-xl bg-accent/5 border-2 border-accent shadow-sm hover:shadow-md transition-all">
+                            <div class="flex justify-between items-start">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-accent text-xs">🔴</span>
+                                    <span class="text-sm font-extrabold text-dark">[30 de junio, 5:00 PM]</span>
+                                </div>
+                                <span class="bg-accent text-white text-[9px] font-bold px-1 py-0.5 rounded uppercase tracking-wider">Próxima</span>
+                            </div>
+                            <a href="https://concytec-gob-pe.zoom.us/j/84893990090?pwd=SpzFX0rG05wAfMth8jXaHhU5Q2oMUo.1" target="_blank" class="w-full text-center bg-white border border-accent text-accent font-bold text-sm py-2 rounded-lg hover:bg-accent hover:text-white transition-colors duration-300">
+                                Unirse a la videollamada
+                            </a>
+                        </li>
+
+                        <li class="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-400 text-sm">💻</span>
+                                <span class="text-sm font-medium text-slate-600">[15 de julio, 5:00 PM]</span>
+                            </div>
+                            <a href="https://concytec-gob-pe.zoom.us/j/84893990090?pwd=SpzFX0rG05wAfMth8jXaHhU5Q2oMUo.1" target="_blank" class="text-xs font-bold text-slate-500 hover:text-accent transition-colors flex items-center gap-1 group whitespace-nowrap">
+                                Unirse <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                            </a>
+                        </li>
+
+                        <li class="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-400 text-sm">💻</span>
+                                <span class="text-sm font-medium text-slate-600">[7 de agosto, 5:00 PM]</span>
+                            </div>
+                            <a href="https://concytec-gob-pe.zoom.us/j/87573790200?pwd=rp22140BczobFVcnUdr6f489pwiepb.1" target="_blank" class="text-xs font-bold text-slate-500 hover:text-accent transition-colors flex items-center gap-1 group whitespace-nowrap">
+                                Unirse <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-dark flex flex-col h-full">
+                    <div class="w-14 h-14 rounded-xl bg-dark/10 flex items-center justify-center text-2xl mb-6 shadow-sm">
+                        👩‍💻
+                    </div>
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold text-dark">Inscripción</h3>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand px-2 py-1 rounded-md">10 - 14 Ago</span>
+                    </div>
+                    <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
+                        Para participar en la feria, la plataforma de inscripción estará abierta en las fechas indicadas.
+                    </p>
+                    <div class="mt-auto">
+                        <span class="inline-flex items-center gap-2 text-slate-400 font-medium cursor-not-allowed">
+                            Formulario de inscripción →
+                        </span>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- -----------------------------
+    AREAS DE PARTICIPACION
+    ----------------------------- -->
+
+    <section id="areas" class="py-16 bg-white">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-8">
+            <div class="flex flex-col items-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark tracking-tight text-center">Áreas de Participación</h2>
+                <div class="w-20 h-1 bg-brand mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-slate-900 flex flex-col min-h-[420px] cursor-pointer">
+                    <img src="assets/areas/cientifica.jpg" alt="Científica" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 ease-out group-hover:scale-110 opacity-80 group-hover:opacity-100" />
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10"></div>
+                    
+                    <div class="relative z-20 p-8 flex flex-col h-full justify-end pointer-events-none transition-transform duration-500 group-hover:-translate-y-4">
+                        <h3 class="text-2xl font-extrabold text-white uppercase tracking-wider">Científica</h3>
+                    </div>
+
+                    <div class="absolute inset-x-4 bottom-4 z-30 bg-white/95 backdrop-blur-md p-5 rounded-xl shadow-2xl opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out pointer-events-none border-t-4 border-brand">
+                        <div class="text-[13px] text-slate-700 leading-relaxed space-y-3">
+                            <p>Proyectos escolares basados en leyes y principios de la biología, química, física y matemática, enfocados en evaluar las necesidades del entorno y analizar el impacto humano en la naturaleza.</p>
+                            <p>El proceso permite estructurar conocimientos, construir saberes y fijar alternativas mediante el <strong>método científico</strong> (identificar, plantear hipótesis, proponer y teorizar).</p>
+                            <p>El propósito es potenciar el "saber hacer", preparándolos para enfrentar y resolver nuevas situaciones problemáticas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-slate-900 flex flex-col min-h-[420px] cursor-pointer">
+                    <img src="assets/areas/ambiental.jpg" alt="Ciencias Ambientales" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 ease-out group-hover:scale-110 opacity-80 group-hover:opacity-100" />
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10"></div>
+                    
+                    <div class="relative z-20 p-8 flex flex-col h-full justify-end pointer-events-none transition-transform duration-500 group-hover:-translate-y-4">
+                        <h3 class="text-2xl font-extrabold text-white uppercase tracking-wider">Ciencias ambientales</h3>
+                    </div>
+
+                    <div class="absolute inset-x-4 bottom-4 z-30 bg-white/95 backdrop-blur-md p-5 rounded-xl shadow-2xl opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out pointer-events-none border-t-4 border-accent">
+                        <div class="text-[13px] text-slate-700 leading-relaxed space-y-3">
+                            <p>Engloba proyectos de indagación sobre el mundo natural y artificial, enfocados en la conservación de la biodiversidad, el agua, el aire y los suelos.</p>
+                            <p><strong>Enfoques principales:</strong> Sostenibilidad, buenas prácticas ambientales y adaptación al cambio climático.</p>
+                            <p>Los estudiantes deben proponer soluciones viables para disminuir la huella humana, demostrando un conocimiento profundo de las necesidades de restauración de su entorno.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-slate-900 flex flex-col min-h-[420px] cursor-pointer">
+                    <img src="assets/areas/social.jpg" alt="Social y Vida Práctica" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 ease-out group-hover:scale-110 opacity-80 group-hover:opacity-100" />
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10"></div>
+                    
+                    <div class="relative z-20 p-8 flex flex-col h-full justify-end pointer-events-none transition-transform duration-500 group-hover:-translate-y-4">
+                        <h3 class="text-2xl font-extrabold text-white uppercase tracking-wider">Social y Vida Práctica</h3>
+                    </div>
+
+                    <div class="absolute inset-x-4 bottom-4 z-30 bg-white/95 backdrop-blur-md p-5 rounded-xl shadow-2xl opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out pointer-events-none border-t-4 border-dark">
+                        <div class="text-[13px] text-slate-700 leading-relaxed space-y-3">
+                            <p>Vincula habilidades comunicativas, artísticas y artesanales con planes de emprendimiento de impacto y responsabilidad social, transformando competencias en servicios innovadores.</p>
+                            <p><strong>Enfoques principales:</strong> Viabilidad comercial, pertinencia social y sostenibilidad económica.</p>
+                            <p>Se debe presentar una planificación estructurada que incluya la viabilidad de sus fases y un plan financiero que respalde el negocio.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-slate-900 flex flex-col min-h-[420px] cursor-pointer">
+                    <img src="assets/areas/tecnologia.jpg" alt="Tecnología e Ingeniería" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 ease-out group-hover:scale-110 opacity-80 group-hover:opacity-100" />
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10"></div>
+                    
+                    <div class="relative z-20 p-8 flex flex-col h-full justify-end pointer-events-none transition-transform duration-500 group-hover:-translate-y-4">
+                        <h3 class="text-2xl font-extrabold text-white uppercase tracking-wider">Tecnología e Ingeniería</h3>
+                    </div>
+
+                    <div class="absolute inset-x-4 bottom-4 z-30 bg-white/95 backdrop-blur-md p-5 rounded-xl shadow-2xl opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out pointer-events-none border-t-4 border-brand">
+                        <div class="text-[13px] text-slate-700 leading-relaxed space-y-3">
+                            <p>Proyectos que aplican principios científicos para transformar recursos tecnológicos o crear prototipos mecánicos que faciliten la vida humana.</p>
+                            <p><strong>Enfoque principal:</strong> Resolución de problemáticas del contexto real mediante el aprendizaje significativo y la innovación técnica.</p>
+                            <p>Las propuestas deben evidenciar un proceso riguroso de investigación, planeación, construcción y pruebas del prototipo.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- ----------------------------
+CRONOGRAMA
+---------------------------- -->
+
+    <section id="cronograma" class="py-16 bg-slate-100">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-8">
+            <div class="flex flex-col items-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark tracking-tight text-center">Cronograma 2026</h2>
+                <div class="w-20 h-1 bg-brand mt-4 rounded-full"></div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg border-t-4 border-accent overflow-hidden">
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[650px]">
+                        
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th class="py-5 px-6 font-bold uppercase tracking-wider text-sm w-1/3">Etapa</th>
+                                <th class="py-5 px-6 font-bold uppercase tracking-wider text-sm w-1/3">Hito</th>
+                                <th class="py-5 px-6 font-bold uppercase tracking-wider text-sm w-1/3">Fechas</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody class="divide-y divide-slate-100">
+                            
+                            <tr class="hover:bg-slate-50 transition-colors group">
+                                <td rowspan="4" class="py-6 px-6 font-extrabold text-dark text-center uppercase tracking-wide bg-slate-50/50 border-r border-slate-100 align-middle">
+                                    <span class="block text-brand text-3xl mb-2">💻</span>
+                                    Primera Etapa <br>
+                                    <span class="text-sm text-slate-500 font-medium normal-case mt-1 block">Modalidad Virtual</span>
+                                </td>
+                                <td class="py-4 px-6 text-slate-700 font-medium">Convocatoria</td>
+                                <td class="py-4 px-6 text-slate-600">De marzo a agosto</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 text-slate-700 font-medium">Fecha de inscripción</td>
+                                <td class="py-4 px-6 text-dark font-bold bg-brand/10 rounded-r-lg">10 - 14 de agosto</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 text-slate-700 font-medium">Evaluación de proyectos</td>
+                                <td class="py-4 px-6 text-slate-600">17 de agosto - 9 de setiembre</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 text-slate-700 font-medium">Publicación de resultados</td>
+                                <td class="py-4 px-6 text-slate-600">11 de septiembre</td>
+                            </tr>
+
+                            <tr class="border-t-4 border-slate-100 hover:bg-slate-50 transition-colors">
+                                <td rowspan="2" class="py-6 px-6 font-extrabold text-dark text-center uppercase tracking-wide bg-slate-50/50 border-r border-slate-100 align-middle">
+                                    <span class="block text-accent text-3xl mb-2">🏫</span>
+                                    Segunda Etapa <br>
+                                    <span class="text-sm text-slate-500 font-medium normal-case mt-1 block">Modalidad Presencial</span>
+                                </td>
+                                <td class="py-4 px-6 text-slate-700 font-medium">Convocatoria a proyectos finalistas</td>
+                                <td class="py-4 px-6 text-slate-600">11 de septiembre</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 text-slate-700 font-medium leading-relaxed">
+                                    Desarrollo de la XXII Feria Escolar Binacional de Ciencia y Tecnología Perú - Ecuador en Sullana, Piura
+                                </td>
+                                <td class="py-4 px-6 text-accent font-bold">Del 5 al 7 de octubre</td>
+                            </tr>
+
+                            <tr class="bg-dark text-white border-t-4 border-brand">
+                                <td colspan="2" class="py-6 px-6 font-bold text-center uppercase tracking-widest flex flex-col sm:flex-row items-center justify-center gap-3">
+                                    <span class="text-2xl">🏆</span> Publicación de resultados finales
+                                </td>
+                                <td class="py-6 px-6 font-extrabold text-brand text-xl">
+                                    7 de octubre
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- ====================
+GALERIA DE FOTOS
+==================== -->
+
+    <section id="fotos" class="py-16 bg-white">
+        <div class="container mx-auto max-w-7xl px-6 lg:px-8">
+            
+            <div class="flex flex-col items-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark tracking-tight text-center">Galería Fotográfica</h2>
+                <div class="w-20 h-1 bg-brand mt-4 rounded-full"></div>
+                <p class="text-slate-500 mt-4 text-center">Revive los mejores momentos de las ediciones anteriores.</p>
+            </div>
+
+            <div class="relative w-full group mt-8">
+                
+                <button id="btn-prev-fotos" class="hidden md:flex absolute -left-5 top-1/2 z-40 bg-white text-dark w-12 h-12 rounded-full items-center justify-center shadow-xl border border-slate-100 hover:bg-brand hover:text-white transition-all duration-300 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6 pr-1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+
+                <div id="carrusel-fotos" class="flex flex-nowrap overflow-x-auto gap-4 pb-8 snap-x snap-mandatory hide-scrollbar scroll-smooth w-full">
+                    
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto01.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto02.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto03.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto04.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto05.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto06.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto07.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto08.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto09.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto10.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto11.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto12.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto13.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto14.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+                    
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto15.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+                    
+                    <div class="flex-none w-[85%] md:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] snap-start rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 relative group/foto cursor-pointer h-64 md:h-72">
+                        <img src="assets/fotos/foto16.jpg" alt="Feria FEBICYT" class="w-full h-full object-cover transform group-hover/foto:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/0 group-hover/foto:bg-accent/20 transition-colors duration-300"></div>
+                    </div>
+
+                </div>
+
+                <button id="btn-next-fotos" class="hidden md:flex absolute -right-5 top-1/2 z-40 bg-white text-dark w-12 h-12 rounded-full items-center justify-center shadow-xl border border-slate-100 hover:bg-brand hover:text-white transition-all duration-300 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6 pl-1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mt-8 flex justify-center">
+                <a href="https://www.flickr.com/photos/educacionecuador/albums/72177720329835329/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-3 bg-dark text-white font-bold rounded-full hover:bg-brand transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Ver álbum completo de la XXI FEBICYT 2026 en Flickr
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+<!-- ----------------------------
+-- GALERIA DE VIDEOS
+---------------------------- -->
+    
+    <section id="videos" class="py-16 bg-slate-100">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-8">
+            <div class="flex flex-col items-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark tracking-tight text-center">Galería de Videos</h2>
+                <div class="w-20 h-1 bg-brand mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="relative w-full group">
+                
+                <button id="btn-prev" class="hidden md:flex absolute -left-6 top-[30%] z-40 bg-white text-dark w-12 h-12 rounded-full items-center justify-center shadow-xl border border-slate-100 hover:bg-brand hover:text-white transition-all duration-300 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6 pr-1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+
+                <div id="contenedor-videos" class="flex flex-nowrap overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar scroll-smooth w-full">
+                    
+                    <div class="skeleton-video flex-none w-full md:w-[calc(50%-12px)] snap-start bg-white rounded-2xl shadow-md overflow-hidden border-b-4 border-slate-200 animate-pulse flex flex-col">
+                        <div class="w-full aspect-video bg-slate-200 flex items-center justify-center">
+                            <svg class="w-12 h-12 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="p-6">
+                            <div class="w-3/4 h-5 bg-slate-200 rounded mb-3"></div>
+                            <div class="w-1/2 h-4 bg-slate-200 rounded"></div>
+                        </div>
+                    </div>
+                    <div class="skeleton-video flex-none w-full md:w-[calc(50%-12px)] snap-start bg-white rounded-2xl shadow-md overflow-hidden border-b-4 border-slate-200 animate-pulse flex flex-col">
+                        <div class="w-full aspect-video bg-slate-200 flex items-center justify-center">
+                            <svg class="w-12 h-12 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div class="p-6">
+                            <div class="w-3/4 h-5 bg-slate-200 rounded mb-3"></div>
+                            <div class="w-1/2 h-4 bg-slate-200 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btn-next" class="hidden md:flex absolute -right-6 top-[30%] z-40 bg-white text-dark w-12 h-12 rounded-full items-center justify-center shadow-xl border border-slate-100 hover:bg-brand hover:text-white transition-all duration-300 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6 pl-1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+                
+            </div>
+        </div>
+    </section>
+
+<!-- ------------------------------
+INSTITUCIONES
+------------------------------ -->
+    
+    <section class="py-16 bg-slate-50">
+        <div class="container mx-auto px-6 lg:px-8 max-w-6xl text-center">
+            
+            <div class="flex flex-col items-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark tracking-tight text-center">Instituciones Organizadoras</h2>
+                <div class="w-20 h-1 bg-brand mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+                
+                <a href="https://www.flickr.com/photos/educacionecuador/" target="_blank" rel="noopener noreferrer" class="group block">
+                    <img src="assets/logos/logo-ecuador.png" alt="Ministerio de Educación Ecuador" class="h-12 md:h-16 object-contain opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+                </a>
+                
+                <a href="https://www.gob.pe/concytec" target="_blank" rel="noopener noreferrer" class="group block">
+                    <img src="assets/logos/logo-concytec.png" alt="Concytec" class="h-20 md:h-24 object-contain opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+                </a>
+                
+                <a href="https://www.gob.pe/minedu" target="_blank" rel="noopener noreferrer" class="group block">
+                    <img src="assets/logos/minedu.png" alt="MINEDU" class="h-12 md:h-16 object-contain opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+                </a>
+                
+            </div>
+            
+            <div class="mt-16 relative p-8 md:p-10 bg-white rounded-3xl shadow-lg border-t-4 border-accent max-w-4xl mx-auto overflow-hidden">
+                
+                <div class="absolute top-4 left-6 text-6xl text-slate-100 font-serif pointer-events-none">"</div>
+                <div class="absolute bottom-[-10px] right-6 text-6xl text-slate-100 font-serif pointer-events-none rotate-180">"</div>
+                
+                <p class="relative z-10 text-dark md:text-xl font-medium italic leading-relaxed px-4">
+                    Buscamos fortalecer las capacidades investigativas de los estudiantes y promover el intercambio de experiencias en la enseñanza-aprendizaje de la investigación científica y tecnológica, incentivando el emprendimiento.
+                </p>
+                
+            </div>
+        </div>  
+    </section>   
+
+<!-- =========================
+PIE DE PAGINA
+============================== -->
+    
+    <footer class="bg-dark text-white pt-16">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
+                
+                <div class="flex flex-col items-start">
+                    <img src="assets/logos/logo-concytec-horizontal.png" alt="Concytec" class="h-20 mb-6 brightness-0 invert opacity-90">
+                    <h3 class="text-brand font-extrabold text-2xl mb-3 tracking-wide">FEBICYT</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed pr-4">
+                        La Feria Escolar Binacional de Ciencia y Tecnología es un espacio de encuentro para estudiantes y profesores de Ecuador y Perú, impulsando el futuro científico y tecnológico de la región.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-6 uppercase text-accent tracking-widest text-sm">Enlaces de interés</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#febicyt" class="text-slate-300 hover:text-brand transition-colors text-sm flex items-center gap-2"><span class="text-brand text-xs">▸</span> Sobre la feria</a></li>
+                        <li><a href="#alcance" class="text-slate-300 hover:text-brand transition-colors text-sm flex items-center gap-2"><span class="text-brand text-xs">▸</span> Alcance Binacional</a></li>
+                        <li><a href="#bases" class="text-slate-300 hover:text-brand transition-colors text-sm flex items-center gap-2"><span class="text-brand text-xs">▸</span> ¿Cómo participar?</a></li>
+                        <li><a href="#cronograma" class="text-slate-300 hover:text-brand transition-colors text-sm flex items-center gap-2"><span class="text-brand text-xs">▸</span> Cronograma 2026</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-6 uppercase text-accent tracking-widest text-sm">Contacto</h4>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/></svg>
+                            <span class="text-slate-300 text-sm">Av. del Aire 485, San Borja, Lima</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.273-3.973-6.869-6.87l1.293-.97c.362-.271.527-.733.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z"/></svg>
+                            <span class="text-slate-300 text-sm">0051-1-399-0030 anexo 1220</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25H4.5a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5H4.5a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.909A2.25 2.25 0 0 1 2.25 8.663V6.75"/></svg>
+                            <a href="mailto:ferias@concytec.gob.pe" class="text-slate-300 text-sm hover:text-white transition-colors">ferias@concytec.gob.pe</a>
+                        </li>
+                    </ul>
+
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/concytec/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand hover:-translate-y-1 transition-all duration-300">
+                            <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/concytecperu/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand hover:-translate-y-1 transition-all duration-300">
+                            <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/ConcytecPeru" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand hover:-translate-y-1 transition-all duration-300">
+                            <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@concytecperu" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand hover:-translate-y-1 transition-all duration-300">
+                            <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.2c0 1.96-.5 3.96-1.7 5.48-1.56 1.98-4.04 3.03-6.55 2.87-2.61-.17-5.05-1.57-6.5-3.71-1.39-2.05-1.71-4.71-.78-6.93.9-2.15 2.67-3.88 4.88-4.63 1.12-.38 2.31-.49 3.5-.38v4.06c-1.07.03-2.16.29-3.05.93-.94.67-1.54 1.77-1.58 2.92-.04 1.34.56 2.66 1.57 3.52 1.11.95 2.72 1.25 4.11.85 1.48-.42 2.63-1.67 2.91-3.18.1-.53.11-1.08.11-1.62V.02z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div> 
+
+            <!-- <div class="py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <p class="text-slate-500 text-xs font-medium">
+                    © 2026 Consejo Nacional de Ciencia, Tecnología e Innovación (Concytec). Todos los derechos reservados.
+                </p>
+                <p class="text-slate-500 text-xs font-medium">
+                    Sitio oficial de la XXII edición FEBICYT
+                </p>
+            </div> -->
+
+        </div> 
+    </footer>
+
+<!-- ========
+ SCRIPTS
+======== -->
+<script src="js/global.js"></script>
+<script src="js/inicio.js"></script>
+
+<!-- =========
+ ZOOM DE FOTOS
+ =============== -->
+<div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 cursor-pointer" onclick="cerrarLightbox(event)">
+    
+    <button class="absolute top-6 right-6 text-white text-5xl font-light hover:text-accent transition active:scale-95" onclick="forzarCerrarLightbox()">
+        &times;
+    </button>
+    
+    <img id="lightboxImage" src="" alt="Imagen ampliada" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain cursor-default scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+    
+</div>
+
+
+</body>
+
+</html>
