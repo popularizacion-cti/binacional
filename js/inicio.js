@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // CONTADOR PARA EL BANNER DE ALERTA
-const targetDate = new Date("August 10, 2026 00:00:00").getTime();
+const targetDate = new Date("August 14, 2026 23:59:59").getTime();
 
 setInterval(() => {
     const now = new Date().getTime();
