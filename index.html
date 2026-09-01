@@ -20,7 +20,7 @@
         <div class="container mx-auto flex flex-col md:flex-row justify-center items-center gap-4">
             <div class="flex items-center gap-2 font-bold uppercase tracking-wider">
                 <span class="animate-pulse">🔔</span> 
-                La inscripción cierra en:
+                La inscripción inicia en:
             </div>
             
             <div id="countdown" class="flex gap-4 font-mono text-xl font-black">
@@ -67,6 +67,9 @@
             <h1 class="text-3xl md:text-6xl font-bold mb-4 pt-4 md:pt-4 animate__animated animate__fadeInUp">FEBICYT <span class="text-brand">2026</span></h1>
             <p class="justify-centertext-xl md:text-3xl mb-4 max-w-2xl mx-auto upp">XXII Feria Escolar Binacional de Ciencia y Tecnología <br><b>Perú - Ecuador</b></p>
             <p class="text-xl md:text-2xl mb-6 max-w-2xl mx-auto">Sullana, del 5 al 7 de octubre</p>   
+            <div class="text-2xl flex flex-wrap justify-center gap-4 mb-8">
+                <a href="#horarios" class="bg-brand hover:opacity-70 text-white font-bold px-8 py-3 rounded-full  transition">&nbsp; HORARIOS DE EVALUACIÓN &nbsp;</a>
+            </div>
             <!-- <div class="text-2xl flex flex-wrap justify-center gap-4 mb-8">
                 <a href="https://sites.google.com/concytec.gob.pe/pop/febicyt/inscripcion" target="_blank" class="bg-brand hover:opacity-70 text-white font-bold px-8 py-3 rounded-full  transition">&nbsp; INSCRIPCIÓN AQUÍ &nbsp;</a>
             </div> -->
@@ -85,7 +88,7 @@
         
     </header>
 
-    <div class="sub-nav flex flex-wrap justify-center">
+    <div class="bg-slate-50 sub-nav flex flex-wrap justify-center">
         <a href="#feria">Sobre la feria</a>
         <a href="#alcance">Alcance Binacional</a>
         <a href="#bases">¿Cómo participar?</a>
@@ -95,6 +98,85 @@
         <a href="#videos">Galería de videos</a>
     </div>
 
+
+    <!------------------------------
+    HORARIOS DE EVALUACIÓN
+    ---------------------------- -->
+    <section id="horarios" class="py-16 bg-white">
+        <div class="container mx-auto max-w-6xl px-6 lg:px-8">
+            
+            <div class="flex flex-col items-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-dark tracking-tight text-center">Horarios de Evaluación</h2>
+                <div class="w-20 h-1 bg-brand mt-4 rounded-full"></div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-4 border-b border-slate-200 pb-4" id="tabs-areas">
+                <button class="tab-btn active px-6 py-2.5 rounded-full font-bold text-sm md:text-base transition-all bg-brand text-white shadow-md transform hover:-translate-y-0.5" data-area="cientifica">Científica</button>
+                <button class="tab-btn px-6 py-2.5 rounded-full font-bold text-sm md:text-base transition-all bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-dark transform hover:-translate-y-0.5" data-area="ambiental">Ciencias Ambientales</button>
+                <button class="tab-btn px-6 py-2.5 rounded-full font-bold text-sm md:text-base transition-all bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-dark transform hover:-translate-y-0.5" data-area="social">Social y Vida Práctica</button>
+                <button class="tab-btn px-6 py-2.5 rounded-full font-bold text-sm md:text-base transition-all bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-dark transform hover:-translate-y-0.5" data-area="tecnologia">Tecnología e Ingeniería</button>
+            </div>
+
+            <div id="sub-tabs-container" class="hidden flex-wrap justify-center gap-3 mb-6 animate__animated animate__fadeIn">
+                <button class="sub-tab-btn active px-5 py-1.5 rounded-full font-bold text-sm transition-all bg-accent text-white shadow-sm" data-sub="tec-grupo1">Grupo 1 (Día 1)</button>
+                <button class="sub-tab-btn px-5 py-1.5 rounded-full font-bold text-sm transition-all bg-slate-100 text-slate-600 hover:bg-slate-200" data-sub="tec-grupo2">Grupo 2 (Día 2)</button>
+            </div>
+
+            <div class="bg-slate-50 p-6 md:p-2 rounded-2xl border-t-4 border-brand shadow-sm mb-8 flex flex-col md:flex-row gap-6 justify-evenly items-center animate__animated animate__fadeIn">
+                <div class="text-center w-full md:w-auto">
+                    <!-- <p class="text-slate-500 text-xs md:text-sm font-bold uppercase tracking-widest mb-2">Día de evaluación</p> -->
+                    <p id="info-dia" class="text-xl md:text-2xl font-extrabold text-dark">--</p>
+                </div>
+                
+                <div class="hidden md:block w-px h-16 bg-slate-200"></div>
+                <div class="block md:hidden h-px w-full bg-slate-200"></div>
+                
+                <div class="text-center w-full md:w-auto">
+                    <!-- <p class="text-slate-500 text-xs md:text-sm font-bold uppercase tracking-widest mb-2">Horario General</p> -->
+                    <p id="info-horario" class="text-2xl md:text-3xl font-black text-brand tracking-tight">--:--</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg border-t-4 border-dark overflow-hidden relative">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[900px]">
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th class="py-4 px-6 font-bold uppercase tracking-wider text-sm w-20 text-center text-">Código</th>
+                                <th class="py-4 px-6 font-bold uppercase tracking-wider text-sm w-1/6">Región</th>
+                                <th class="py-4 px-6 font-bold uppercase tracking-wider text-sm w-1/6">Provincia</th>
+                                <th class="py-4 px-6 font-bold uppercase tracking-wider text-sm">Institución Educativa</th>
+                                <th class="py-4 px-8 font-bold uppercase tracking-wider text-sm w-32 text-center">Horario</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-proyectos" class="divide-y divide-slate-100 text-slate-700">
+                            </tbody>
+                    </table>
+                </div>
+
+                <div id="loader-tabla" class="absolute inset-0 bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center z-10 transition-opacity duration-300">
+                    <div class="w-12 h-12 border-4 border-slate-200 border-t-brand rounded-full animate-spin mb-4"></div>
+                    <p class="text-slate-600 font-bold animate-pulse">Obteniendo horarios en vivo...</p>
+                </div>
+            </div>
+
+            <div class="mt-8 mx-auto bg-slate-100 border-l-4 border-accent p-6 rounded-r-xl max-w-4xl flex flex-col md:flex-row gap-4 items-center justify-between shadow-sm">
+                <div class="flex-1">
+                    <p class="text-slate-700 text-sm md:text-base leading-relaxed">
+                        <span class="font-bold text-dark">Importante:</span> El enlace de Zoom se envió por correo electrónico a los participantes.
+                    </p>
+                    <p class="text-slate-600 text-sm mt-2">
+                        Consultas: <a href="mailto:popularizacion@concytec.gob.pe" class="text-brand font-bold hover:underline">popularizacion@concytec.gob.pe</a> o al teléfono <span class="font-bold">+51 1 399 0030 Anexo 1915</span>.
+                    </p>
+                </div>
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0">
+                    <span class="text-2xl">✉️</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
     <!-- ----------------------------
     FEBICYT
     ---------------------------- -->
@@ -239,13 +321,13 @@
                         <strong>Tema:</strong> Reunión informativa Feria Binacional Perú - Ecuador 2026. Conéctate a nuestras sesiones en línea:
                     </p>
 
-                    <!-- <ul class="space-y-4 flex-grow mt-auto">
+                    <ul class="space-y-4 flex-grow mt-auto">
                         
                         <li class="relative flex flex-col gap-3 p-4 rounded-xl bg-accent/5 border-2 border-accent shadow-sm hover:shadow-md transition-all">
                             <div class="flex justify-between items-start">
                                 <div class="flex items-center gap-2">
                                     <span class="text-accent text-xs">🔴</span>
-                                    <span class="text-sm font-extrabold text-dark">[15 de julio, 6:00 PM]</span>
+                                    <span class="text-sm font-extrabold text-dark">[7 de julio, 5:00 PM]</span>
                                 </div>
                                 <span class="bg-accent text-white text-[9px] font-bold px-1 py-0.5 rounded uppercase tracking-wider">Próxima</span>
                             </div>
@@ -257,7 +339,7 @@
                         <li class="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors">
                             <div class="flex items-center gap-2">
                                 <span class="text-slate-400 text-sm">💻</span>
-                                <span class="text-sm font-medium text-slate-600">[30 de julio, 5:00 PM]</span>
+                                <span class="text-sm font-medium text-slate-600">[15 de julio, 5:00 PM]</span>
                             </div>
                             <a href="https://concytec-gob-pe.zoom.us/j/84893990090?pwd=SpzFX0rG05wAfMth8jXaHhU5Q2oMUo.1" target="_blank" class="text-xs font-bold text-slate-500 hover:text-accent transition-colors flex items-center gap-1 group whitespace-nowrap">
                                 Unirse <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
@@ -274,7 +356,7 @@
                             </a>
                         </li>
 
-                    </ul> -->
+                    </ul>
                 </div>
 
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-dark flex flex-col h-full">
@@ -718,7 +800,7 @@ PIE DE PAGINA
                         </li>
                         <li class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-brand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.273-3.973-6.869-6.87l1.293-.97c.362-.271.527-.733.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z"/></svg>
-                            <span class="text-slate-300 text-sm">0051-1-399-0030 anexo 1220</span>
+                            <span class="text-slate-300 text-sm">0051-1-399-0030 anexo 1915</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-brand shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25H4.5a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5H4.5a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.909A2.25 2.25 0 0 1 2.25 8.663V6.75"/></svg>
