@@ -371,3 +371,182 @@ document.addEventListener('keydown', (event) => {
         forzarCerrarLightbox();
     }
 });
+
+/* =========================================
+   HORARIOS DE EVALUACIÓN (Google Sheets)
+========================================= */
+
+// 1. Configuración de cada área (Ahora Tecnología está dividida en dos hojas/enlaces)
+const configHorarios = {
+    cientifica: {
+        dia: "Lunes, 7 de septiembre",
+        horarioGeneral: "02:00 PM - 04:30 PM",
+        csvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBjBr7Z03U5fW1csmrZfoBJsmLK40LL0MzhiIgssqMAXtmezhBurFg0PnRCTo5NydkVsPta61_9_vH/pub?gid=0&single=true&output=csv"
+    },
+    ambiental: {
+        dia: "Martes, 8 de septiembre",
+        horarioGeneral: "09:00 AM - 01:00 PM",
+        csvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBjBr7Z03U5fW1csmrZfoBJsmLK40LL0MzhiIgssqMAXtmezhBurFg0PnRCTo5NydkVsPta61_9_vH/pub?gid=1042302769&single=true&output=csv"
+    },
+    social: {
+        dia: "Martes, 8 de septiembre",
+        horarioGeneral: "09:00 AM - 01:00 PM",
+        csvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBjBr7Z03U5fW1csmrZfoBJsmLK40LL0MzhiIgssqMAXtmezhBurFg0PnRCTo5NydkVsPta61_9_vH/pub?gid=1815878774&single=true&output=csv"
+    },
+    // Sub-áreas de Tecnología
+    "tec-grupo1": {
+        dia: "martes, 8 de septiembre",
+        horarioGeneral: "02:00 PM - 04:30 PM",
+        csvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBjBr7Z03U5fW1csmrZfoBJsmLK40LL0MzhiIgssqMAXtmezhBurFg0PnRCTo5NydkVsPta61_9_vH/pub?gid=556333468&single=true&output=csv"
+    },
+    "tec-grupo2": {
+        dia: "Miércoles, 9 de septiembre",
+        horarioGeneral: "09:00 PM - 01:00 PM",
+        csvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBjBr7Z03U5fW1csmrZfoBJsmLK40LL0MzhiIgssqMAXtmezhBurFg0PnRCTo5NydkVsPta61_9_vH/pub?gid=1336803405&single=true&output=csv"
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const subTabBtns = document.querySelectorAll('.sub-tab-btn');
+    const subTabsContainer = document.getElementById('sub-tabs-container');
+    
+    if (tabBtns.length === 0) return;
+
+    // Lógica para pestañas principales
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const areaKey = e.target.getAttribute('data-area');
+            
+            // Reiniciar estilos de pestañas principales
+            tabBtns.forEach(b => {
+                b.classList.remove('bg-brand', 'text-white', 'shadow-md', 'active');
+                b.classList.add('bg-slate-100', 'text-slate-600');
+            });
+            
+            // Activar pestaña clickeada
+            e.target.classList.remove('bg-slate-100', 'text-slate-600');
+            e.target.classList.add('bg-brand', 'text-white', 'shadow-md', 'active');
+
+            // Manejo especial para Tecnología e Ingeniería
+            if (areaKey === 'tecnologia') {
+                subTabsContainer.classList.remove('hidden');
+                subTabsContainer.classList.add('flex');
+                
+                // Activar el grupo 1 visualmente por defecto
+                resetSubTabs();
+                subTabBtns[0].classList.remove('bg-slate-100', 'text-slate-600');
+                subTabBtns[0].classList.add('bg-accent', 'text-white', 'shadow-sm', 'active');
+                
+                // Cargar datos del grupo 1
+                cargarHorarios('tec-grupo1');
+            } else {
+                // Ocultar sub-pestañas
+                subTabsContainer.classList.add('hidden');
+                subTabsContainer.classList.remove('flex');
+                
+                // Cargar el área normal
+                cargarHorarios(areaKey);
+            }
+        });
+    });
+
+    // Lógica para sub-pestañas (Grupos de Tecnología)
+    subTabBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const subKey = e.target.getAttribute('data-sub');
+            
+            resetSubTabs();
+            
+            // Activar sub-pestaña clickeada
+            e.target.classList.remove('bg-slate-100', 'text-slate-600');
+            e.target.classList.add('bg-accent', 'text-white', 'shadow-sm', 'active');
+            
+            cargarHorarios(subKey);
+        });
+    });
+
+    function resetSubTabs() {
+        subTabBtns.forEach(b => {
+            b.classList.remove('bg-accent', 'text-white', 'shadow-sm', 'active');
+            b.classList.add('bg-slate-100', 'text-slate-600');
+        });
+    }
+
+    // Cargar la primera pestaña por defecto
+    cargarHorarios('cientifica');
+});
+
+async function cargarHorarios(claveArea) {
+    const config = configHorarios[claveArea];
+    
+    // Actualizar Información General (Día y Hora)
+    document.getElementById('info-dia').textContent = config.dia;
+    document.getElementById('info-horario').textContent = config.horarioGeneral;
+    
+    const tbody = document.getElementById('tabla-proyectos');
+    const loader = document.getElementById('loader-tabla');
+    
+    // Mostrar Loader y limpiar tabla
+    loader.classList.remove('hidden');
+    loader.style.opacity = '1';
+    tbody.innerHTML = '';
+
+    try {
+        const response = await fetch(config.csvUrl);
+        if (!response.ok) throw new Error("Conexión fallida");
+        
+        const csvText = await response.text();
+        const filas = parseCSV(csvText);
+        
+        filas.slice(1).forEach(fila => {
+            if (!fila[0] || fila.length < 5) return; 
+
+            const tr = document.createElement('tr');
+            tr.className = 'hover:bg-slate-50 transition-colors group border-b border-slate-100';
+            
+            tr.innerHTML = `
+                <td class="py-4 px-6 font-black text-dark bg-slate-50/50 text-center">${fila[0]}</td>
+                <td class="py-4 px-6 text-slate-600">${fila[1]}</td>
+                <td class="py-4 px-6 text-slate-600">${fila[2]}</td>
+                <td class="py-4 px-6 font-bold text-dark">${fila[3]}</td>
+                <td class="py-4 px-2 font-extrabold text-accent bg-accent/5 text-center">${fila[4]}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+    } catch (error) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5" class="py-12 text-center">
+                    <span class="text-4xl block mb-2">⚠️</span>
+                    <p class="text-red-500 font-bold">No se pudieron cargar los horarios en este momento.</p>
+                    <p class="text-slate-500 text-sm mt-1">Verifica el enlace de la hoja de cálculo o intenta recargar la página.</p>
+                </td>
+            </tr>
+        `;
+    } finally {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.classList.add('hidden'), 300);
+    }
+}
+
+// Parseador de CSV 
+function parseCSV(str) {
+    const arr = [];
+    let quote = false;
+    let row = 0, col = 0;
+    for (let c = 0; c < str.length; c++) {
+        let cc = str[c], nc = str[c+1];
+        arr[row] = arr[row] || [];
+        arr[row][col] = arr[row][col] || '';
+        if (cc == '"' && quote && nc == '"') { arr[row][col] += cc; ++c; continue; }
+        if (cc == '"') { quote = !quote; continue; }
+        if (cc == ',' && !quote) { ++col; continue; }
+        if (cc == '\r' && nc == '\n' && !quote) { ++row; col = 0; ++c; continue; }
+        if (cc == '\n' && !quote) { ++row; col = 0; continue; }
+        if (cc == '\r' && !quote) { ++row; col = 0; continue; }
+        arr[row][col] += cc;
+    }
+    return arr;
+}
